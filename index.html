@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Regular Expression Assignment</title>
+</head>
+<body>
+  <script>
+    //1. Cat and car
+  const regex = /ca[rt]/;
+console.log(regex.test("car")); 
+console.log(regex.test("cat")); 
+console.log(regex.test("bat"));
+
+
+   //2. pop and prop
+   const regex1 = /p[op]/;
+console.log(regex1.test("pop")); 
+console.log(regex1.test("prop"));
+console.log(regex1.test("pup"));
+
+
+   //3. ferret, ferry, and ferrari
+   const regex2 = /ferr[ey]|ferret/;
+console.log(regex2.test("ferret"));
+console.log(regex2.test("ferry")); 
+console.log(regex2.test("ferrari"));
+console.log(regex2.test("ferrous"));
+
+
+   //4.Any word ending in ious
+   const regex3= /\w+ious\b/;
+console.log(regex3.test("delicious"));
+console.log(regex3.test("curious")); 
+console.log(regex3.test("seriousness")); 
+
+//5. A whitespace character followed by a period, comma, colon, or semicolon
+const regex4 = /\s[.,:;]/;
+console.log(regex4.test(" ."));
+console.log(regex4.test("\t,"));
+console.log(regex4.test("text:"));
+
+//6.A word longer than six letters
+const regex5 = /\w{7,}/;
+console.log(regex5.test("elephant"));
+console.log(regex5.test("cat"));
+
+//7. A word without the letter e (or E)
+const regex6 = /[^eE\s]+/;
+console.log(regex6.test("dog"));
+console.log(regex6.test("Elephant"));
+
+//8.Javascript style number
+const regex7 = /^[+-]?(?:\d+\.\d*|\.\d+|\d+)(?:[eE][+-]?\d+)?$/;
+
+console.log(regex7.test("5"));      
+console.log(regex7.test("-3.14"));  
+console.log(regex7.test("0.5"));  
+console.log(regex7.test(".5")); 
+console.log(regex7.test("1E10"));
+console.log(regex7.test("5e-3"));
+
+console.log(regex7.test("."));      
+console.log(regex7.test("1."));  
+console.log(regex7.test("e5")); 
+console.log(regex7.test("1.2.3")); 
+
+
+
+
+
+
+  
+
+  </script>
+</body>
+</html>
